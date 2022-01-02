@@ -13,6 +13,11 @@
   font-style: normal;
 }
 
+.fifty {
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
 #__next {
   display: flex;
   flex-direction: column;

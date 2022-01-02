@@ -20,13 +20,34 @@ const NFTCard: React.FC<NFTCardProps> = ({
 }) => {
   return (
     <div className='bg-gray-200 dark:bg-gray-900 p-6 rounded-xl flex flex-col space-y-6'>
-      <Image
-        src={image}
-        alt='NFT'
-        width={400}
-        height={400}
-        className='rounded-lg'
-      />
+      <div className='group relative'>
+        <Image
+          src={image}
+          alt='NFT'
+          width={325}
+          height={325}
+          className='rounded-lg'
+        />
+        <button className='flex space-x-2 items-center invisible group-hover:visible transition duration-200 transform absolute top-1/2 left-1/2 px-4 py-2 fifty bg-gray-900 bg-opacity-70 cursor-pointer rounded-lg'>
+          {/* .fifty {
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+          } */}
+          <svg
+            width='18'
+            height='18'
+            viewBox='0 0 18 18'
+            fill='none'
+            xmlns='http://www.w3.org/2000/svg'
+          >
+            <path
+              d='M9 0L11.4308 6.56918L18 9L11.4308 11.4308L9 18L6.56918 11.4308L0 9L6.56918 6.56918L9 0Z'
+              fill='#DAC50B'
+            />
+          </svg>
+          <p>Place a bid</p>
+        </button>
+      </div>
       <div className='flex items-center space-x-4'>
         <Image
           src={pfp}
