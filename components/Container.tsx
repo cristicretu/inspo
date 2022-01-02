@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 import Footer from 'components/Footer';
 import Head from 'next/head';
+import Link from 'next/link';
 import useKeypress from 'react-use-keypress';
 import { useRouter } from 'next/dist/client/router';
 import { useTheme } from 'next-themes';
@@ -60,13 +61,33 @@ export default function Container(props) {
           <meta property='article:published_time' content={meta.date} />
         )}
       </Head>
-      <nav className='flex items-center sticky-nav justify-between w-full py-6 px-2 sm:px-8 md:px-40 mx-auto  bg-opacity-50 text-gray-900 dark:text-gray-100'>
+
+      <div className='sticky-nav absolute grid w-80 md:w-112 grid-cols-3'>
+        <div>
+          <div className='w-48 md:w-96 bg-red-500 h-6'></div>
+          <div className='w-48 md:w-96 bg-yellow-500 h-6'></div>
+        </div>
+
+        <div>
+          <div className='w-48 md:w-96 bg-blue-500 h-6'></div>
+          <div className='w-48 md:w-96 bg-red-500 h-6'></div>
+        </div>
+
+        <div>
+          <div className='w-48 md:w-96 bg-green-500 h-6'></div>
+          <div className='w-48 md:w-96 bg-blue-500 h-6'></div>
+        </div>
+      </div>
+      <nav className='flex items-center sticky-nav justify-between w-full py-3 px-4 sm:px-8 md:px-16 lg:px-40 mx-auto bg-opacity-50 text-gray-900 dark:text-gray-100'>
         <div className='flex space-x-2 text-base items-center'>
-          {/* <Link href='/'>
-            <a className='text-gray-600 hover:text-gray-900 dark:hover:text-gray-100 dark:text-gray-300'>
-              Home
+          <Link href='/'>
+            <a className='text-lg md:text-2xl text-center font-bold tracking-tight'>
+              Inspo.
             </a>
-          </Link> */}
+          </Link>
+          <p className='text-sm md:text-md'>
+            - Get inspiration for your React Components.
+          </p>
         </div>
 
         <a
@@ -87,7 +108,7 @@ export default function Container(props) {
         </a>
       </nav>
       <main id='skip' className='flex flex-col  justify-center px-2'>
-        <div className=' text-gray-800 dark:text-gray-200'>{children}</div>
+        <div className='mb-4 text-gray-800 dark:text-gray-200'>{children}</div>
         <Footer />
       </main>
     </div>
