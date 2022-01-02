@@ -45,7 +45,7 @@ const NFTCard: React.FC<NFTCardProps> = ({
               fill='#DAC50B'
             />
           </svg>
-          <p>Place a bid</p>
+          <p className='text-gray-100'>Place a bid</p>
         </button>
       </div>
       <div className='flex items-center space-x-4'>
