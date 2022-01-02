@@ -17,7 +17,7 @@ export default function Container(props) {
   const meta = {
     title: 'Inspo',
     description: 'Creative inspiration.',
-    image: '',
+    image: 'https://inspo.cretu.dev/static/images/Header.png',
     type: 'website',
     ...customMeta,
   };
