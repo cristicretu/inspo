@@ -64,18 +64,18 @@ export default function Container(props) {
 
       <div className='sticky-nav absolute grid w-80 md:w-112 grid-cols-3'>
         <div>
-          <div className='w-48 md:w-96 bg-red-500 h-6'></div>
-          <div className='w-48 md:w-96 bg-yellow-500 h-6'></div>
+          <div className='w-48 md:w-96 bg-red-500 h-7'></div>
+          <div className='w-48 md:w-96 bg-yellow-500 h-6 md:h-7'></div>
         </div>
 
         <div>
-          <div className='w-48 md:w-96 bg-blue-500 h-6'></div>
-          <div className='w-48 md:w-96 bg-red-500 h-6'></div>
+          <div className='w-48 md:w-96 bg-blue-500 h-7'></div>
+          <div className='w-48 md:w-96 bg-red-500 h-6 md:h-7'></div>
         </div>
 
         <div>
-          <div className='w-48 md:w-96 bg-green-500 h-6'></div>
-          <div className='w-48 md:w-96 bg-blue-500 h-6'></div>
+          <div className='w-48 md:w-96 bg-green-500 h-7'></div>
+          <div className='w-48 md:w-96 bg-blue-500 h-6 md:h-7'></div>
         </div>
       </div>
       <nav className='flex items-center sticky-nav justify-between w-full py-3 px-4 sm:px-8 md:px-16 lg:px-40 mx-auto bg-opacity-50 text-gray-900 dark:text-gray-100'>
