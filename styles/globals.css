@@ -13,6 +13,46 @@
   font-style: normal;
 }
 
+.grad {
+  background: black; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(
+    left,
+    orange,
+    yellow,
+    green,
+    cyan,
+    blue,
+    violet
+  ); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(
+    right,
+    green,
+    orange,
+    red,
+    purple,
+    blue
+  ); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(
+    right,
+    green,
+    orange,
+    red,
+    purple,
+    blue
+  ); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(
+    to right,
+    green,
+    orange,
+    red,
+    purple,
+    blue
+  ); /* Standard syntax (must be last) */
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .fifty {
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
