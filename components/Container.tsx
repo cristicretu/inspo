@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 
 import Footer from 'components/Footer';
 import Head from 'next/head';
-import Link from 'next/link';
 import useKeypress from 'react-use-keypress';
 import { useRouter } from 'next/dist/client/router';
 import { useTheme } from 'next-themes';
@@ -15,7 +14,7 @@ export default function Container(props) {
   const router = useRouter();
 
   const meta = {
-    title: 'Nefsi',
+    title: 'Inspo',
     description: 'Creative inspiration.',
     image: '',
     type: 'website',
@@ -34,20 +33,26 @@ export default function Container(props) {
   });
 
   return (
-    <div className='bg-white dark:bg-gray-900'>
+    <div className='bg-white dark:bg-black'>
       <Head>
         <title>{meta.title}</title>
         <meta name='robots' content='follow, index' />
         <meta content={meta.description} name='description' />
-        {/* <meta property="og:url" content={`https://cretu.dev${router.asPath}`} /> */}
-        {/* <link rel="canonical" href={`https://cretu.dev${router.asPath}`} /> */}
+        <meta
+          property='og:url'
+          content={`https://inspo.cretu.dev${router.asPath}`}
+        />
+        <link
+          rel='canonical'
+          href={`https://inspo.cretu.dev${router.asPath}`}
+        />
         <meta property='og:type' content={meta.type} />
         <meta property='og:site_name' content='Template' />
         <meta property='og:description' content={meta.description} />
         <meta property='og:title' content={meta.title} />
         <meta property='og:image' content={meta.image} />
         <meta name='twitter:card' content='summary_large_image' />
-        {/* <meta name="twitter:site" content="@cristicrtu" /> */}
+        <meta name='twitter:site' content='@cristicrtu' />
         <meta name='twitter:title' content={meta.title} />
         <meta name='twitter:description' content={meta.description} />
         <meta name='twitter:image' content={meta.image} />
@@ -55,7 +60,7 @@ export default function Container(props) {
           <meta property='article:published_time' content={meta.date} />
         )}
       </Head>
-      <nav className='flex items-center sticky-nav justify-between w-full max-w-5xl py-6 px-2 sm:px-8 md:px-40 mx-auto bg-white dark:bg-gray-900 bg-opacity-50 text-gray-900 dark:text-gray-100'>
+      <nav className='flex items-center sticky-nav justify-between w-full py-6 px-2 sm:px-8 md:px-40 mx-auto  bg-opacity-50 text-gray-900 dark:text-gray-100'>
         <div className='flex space-x-2 text-base items-center'>
           {/* <Link href='/'>
             <a className='text-gray-600 hover:text-gray-900 dark:hover:text-gray-100 dark:text-gray-300'>
@@ -65,7 +70,7 @@ export default function Container(props) {
         </div>
 
         <a
-          href='https://github.com/cristicretu/ultimateTemplate'
+          href='https://github.com/cristicretu/inspo'
           target='_blank'
           rel='noreferrer'
           aria-label='Github'
@@ -82,7 +87,7 @@ export default function Container(props) {
         </a>
       </nav>
       <main id='skip' className='flex flex-col  justify-center px-2'>
-        <div className='my-24 text-gray-900 dark:text-gray-100'>{children}</div>
+        <div className=' text-gray-800 dark:text-gray-200'>{children}</div>
         <Footer />
       </main>
     </div>
