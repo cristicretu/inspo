@@ -9,8 +9,7 @@ interface AccountProps {
 
 const Account: React.FC<AccountProps> = ({ username, pfp, description }) => {
   return (
-    <div className='rounded-lg pdax-3 py-6 flex items-center space-x-4  bg-gray-200 dark:bg-gray-900'>
-      {/* move? */}
+    <div className='rounded-lg px-3 py-6 flex items-center space-x-4  bg-gray-200 dark:bg-gray-900'>
       {pfp && (
         <Image
           src={pfp}
