@@ -17,8 +17,8 @@ export default function Home() {
                 timeLeft='4d 16h 32m 10s'
                 price={0.74}
               />
-              <div className='bg-blue-500 rounded-lg w-96 h-96'></div>
-              <div className='bg-green-500 rounded-lg w-96 h-96'></div>
+              <div className='w-48 bg-blue-500 rounded-lg md:w-80 h-96'></div>
+              <div className='w-48 bg-green-500 rounded-lg md:w-80 h-96'></div>
             </div>
 
             <div className='flex flex-col space-y-4'>
@@ -27,13 +27,13 @@ export default function Home() {
                 username='cristicretu'
                 pfp='/static/images/Pfp.png'
               />
-              <div className='bg-yellow-500 rounded-lg w-96 h-96'></div>
-              <div className='bg-red-500 rounded-lg w-96 h-96'></div>
+              <div className='w-48 bg-yellow-500 rounded-lg md:w-80 h-96'></div>
+              <div className='w-48 bg-red-500 rounded-lg md:w-80 h-96'></div>
             </div>
 
             <div className='flex flex-col space-y-4'>
-              <div className='bg-green-500 rounded-lg w-96 h-96'></div>
-              <div className='bg-yellow-500 rounded-lg w-96 h-96'></div>
+              <div className='w-48 bg-green-500 rounded-lg md:w-80 h-96'></div>
+              <div className='w-48 bg-yellow-500 rounded-lg md:w-80 h-96'></div>
             </div>
           </div>
         </div>

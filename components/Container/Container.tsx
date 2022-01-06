@@ -62,7 +62,7 @@ export default function Container(props) {
         )}
       </Head>
 
-      <div className='absolute grid grid-cols-3 sticky-nav w-80 md:w-112'>
+      <div className='absolute grid w-32 grid-cols-3 sticky-nav sm:w-80 md:w-112'>
         <div>
           <div className='w-48 bg-red-500 md:w-96 h-7'></div>
           <div className='w-48 h-6 bg-yellow-500 md:w-96 md:h-7'></div>
