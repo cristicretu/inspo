@@ -1,6 +1,6 @@
-import Account from '@components/Showroom/Account';
+import Account from '@components/Account';
 import Container from '@components/Container';
-import NFTCard from '@components/Showroom/NFTCard';
+import NFTCard from '@components/NFTCard';
 
 export default function Home() {
   return (

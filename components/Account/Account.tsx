@@ -6,8 +6,11 @@ interface AccountProps {
   pfp: string;
   description: string;
 }
-
-const Account: React.FC<AccountProps> = ({ username, pfp, description }) => {
+export default function Account({
+  username,
+  pfp,
+  description,
+}: AccountProps): JSX.Element {
   return (
     <div className='rounded-lg px-3 py-6 flex items-center space-x-4  bg-gray-200 dark:bg-gray-900'>
       {pfp && (
@@ -25,6 +28,4 @@ const Account: React.FC<AccountProps> = ({ username, pfp, description }) => {
       </div>
     </div>
   );
-};
-
-export default Account;
+}

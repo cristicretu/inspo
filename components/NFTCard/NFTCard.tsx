@@ -10,14 +10,14 @@ interface NFTCardProps {
   price?: number;
 }
 
-const NFTCard: React.FC<NFTCardProps> = ({
+export default function NFTCard({
   title,
   username,
   image,
   pfp,
   timeLeft,
   price,
-}) => {
+}: NFTCardProps): JSX.Element {
   return (
     <div className='bg-gray-200 dark:bg-gray-900 p-6 rounded-xl flex flex-col space-y-6'>
       <div className='group relative'>
@@ -86,6 +86,4 @@ const NFTCard: React.FC<NFTCardProps> = ({
       </div>
     </div>
   );
-};
-
-export default NFTCard;
+}
