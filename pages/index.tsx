@@ -1,4 +1,5 @@
 import Account from '@components/Account';
+import Card from '@components/Card';
 import Container from '@components/Container';
 import NFTCard from '@components/NFTCard';
 
@@ -19,6 +20,7 @@ export default function Home() {
               />
               <div className='w-48 bg-blue-500 rounded-lg md:w-80 h-96'></div>
               <div className='w-48 bg-green-500 rounded-lg md:w-80 h-96'></div>
+              <Card editLink='da' tailwindCode='ca' unstyledCode='da' />
             </div>
 
             <div className='flex flex-col space-y-4'>
