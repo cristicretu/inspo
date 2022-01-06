@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import Footer from 'components/Footer';
+import Footer from '@components/Footer';
 import Head from 'next/head';
 import Link from 'next/link';
 import useKeypress from 'react-use-keypress';
