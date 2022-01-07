@@ -10,6 +10,7 @@ import {
   HiArrowNarrowRight
 } from 'react-icons/hi';
 import cx from 'classnames';
+import { createToast } from 'vercel-toast';
 
 interface ICardProps {
   editLink: string;
@@ -55,30 +56,48 @@ export default function Card({
 }: ICardProps): JSX.Element {
   const [isContextMenuOpen, setIsContextMenuOpen] = useState(false);
 
-  const saveCode = (code: string) => {
-    navigator.clipboard.writeText(code);
+  const saveCode = async (code: string) => {
+    try {
+      await navigator.clipboard.writeText(code);
+
+      createToast('Copied component to clipboard', { timeout: 3000 });
+    } catch {
+      createToast('Failed to component to clipboard', {
+        timeout: 3000
+      });
+    }
   };
 
   const visitGithub = () => {
     window.open(editLink, '_blank');
   };
 
-  useKeypress('c', () => {
-    if (isContextMenuOpen) {
-      saveCode(tailwindCode);
-    }
-  });
+  useKeypress(
+    'c',
+    () => {
+      if (isContextMenuOpen) {
+        saveCode(tailwindCode);
+        setIsContextMenuOpen(false);
+      }
+    },
+    [isContextMenuOpen]
+  );
 
-  useKeypress('g', () => {
-    if (isContextMenuOpen) {
-      visitGithub();
-    }
-  });
+  useKeypress(
+    'g',
+    () => {
+      if (isContextMenuOpen) {
+        visitGithub();
+        setIsContextMenuOpen(false);
+      }
+    },
+    [isContextMenuOpen]
+  );
 
   return (
     <div>
       <ContextMenuPrimitive.Root
-        onOpenChange={() => setIsContextMenuOpen(true)}>
+        onOpenChange={(open) => setIsContextMenuOpen(open)}>
         <ContextMenuPrimitive.Trigger className='crosshair'>
           {children}
         </ContextMenuPrimitive.Trigger>
