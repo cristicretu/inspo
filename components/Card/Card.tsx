@@ -52,6 +52,10 @@ export default function Card({
   children,
   props
 }: ICardProps): JSX.Element {
+  const saveCode = (code: string) => {
+    navigator.clipboard.writeText(code);
+  };
+
   return (
     <div>
       <ContextMenuPrimitive.Root>
@@ -68,6 +72,7 @@ export default function Card({
           {generalMenuItems.map(({ label, icon, shortcut }, i) => (
             <ContextMenuPrimitive.Item
               key={`${label}-${i}`}
+              onSelect={() => saveCode(tailwindCode)}
               className={cx(
                 'flex items-center px-2 py-2 text-xs rounded-md outline-none cursor-default select-none',
                 'text-gray-400 focus:bg-gray-50 dark:text-gray-500 dark:focus:bg-gray-900'

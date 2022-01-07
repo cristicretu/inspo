@@ -52,13 +52,15 @@ export default function NFTCard({
         </button>
       </div>
       <div className='flex items-center space-x-4'>
-        <Image
-          src={pfp}
-          alt='Profile Picture'
-          width={50}
-          height={50}
-          className='rounded-full'
-        />
+        <div className='relative w-12 h-12'>
+          <Image
+            src={pfp}
+            alt='Profile Picture'
+            layout='fill'
+            className='rounded-full'
+            objectFit='cover'
+          />
+        </div>
 
         <div className='flex flex-col'>
           <p className='font-bold'>{title}</p>
