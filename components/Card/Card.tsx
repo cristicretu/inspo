@@ -1,6 +1,6 @@
 import * as ContextMenuPrimitive from '@radix-ui/react-context-menu';
 
-import React, { ReactNode, useState } from 'react';
+import React, { Children, ReactNode, useState } from 'react';
 import { SiGithub, SiTailwindcss } from 'react-icons/si';
 
 import { HiOutlineCode } from 'react-icons/hi';
@@ -10,6 +10,7 @@ interface ICardProps {
   editLink: string;
   tailwindCode: string;
   unstyledCode: string;
+  children: any;
 }
 
 interface RadixMenuItem {
@@ -42,15 +43,17 @@ const githubMenuItems: RadixMenuItem[] = [
 export default function Card({
   editLink,
   tailwindCode,
-  unstyledCode
+  unstyledCode,
+  children
 }: ICardProps): JSX.Element {
   return (
     <div>
       <ContextMenuPrimitive.Root>
-        <ContextMenuPrimitive.Trigger className='inline-flex items-center justify-center px-3 py-4 bg-white border-2 border-gray-500 border-dashed rounded-md w-36 dark:bg-gray-800 dark:border-gray-300'>
-          <span className='text-sm font-medium text-gray-700 select-none dark:text-gray-100'>
+        <ContextMenuPrimitive.Trigger>
+          {/* <span className='text-sm font-medium text-gray-700 select-none dark:text-gray-100'>
             Right Click
-          </span>
+          </span> */}
+          {children}
         </ContextMenuPrimitive.Trigger>
 
         <ContextMenuPrimitive.Content
