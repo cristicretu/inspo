@@ -13,10 +13,10 @@ const components: IComponent[] = [
   {
     JSX: (
       <NFTCard
-        username='cristicretu'
+        author='cristicretu'
         title='Origin and Evolution#4471'
         image='/static/images/NFT.png'
-        pfp='/static/images/Pfp.png'
+        authorProfilePicture='/static/images/Pfp.png'
         timeLeft='4d 16h 32m 10s'
         price={0.74}
       />
@@ -28,18 +28,18 @@ import React from 'react';
 
 interface NFTCardProps {
   title: string;
-  username?: string;
+  author?: string;
   image?: string;
-  pfp?: string;
+  authorProfilePicture?: string;
   timeLeft?: string;
   price?: number;
 }
 
 export default function NFTCard({
   title,
-  username,
+  author,
   image,
-  pfp,
+  authorProfilePicture,
   timeLeft,
   price
 }: NFTCardProps): JSX.Element {
@@ -57,9 +57,9 @@ export default function NFTCard({
         </div>
         <button className='absolute flex items-center invisible px-4 py-2 space-x-2 transition duration-200 transform bg-gray-900 rounded-lg cursor-pointer group-hover:visible top-1/2 left-1/2 fifty bg-opacity-70'>
           {/* .fifty {
-                transform: translate(-50%, -50%);
-                -ms-transform: translate(-50%, -50%);
-              } */}
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+          } */}
 
           {/* Star SVG */}
           <svg
@@ -77,17 +77,19 @@ export default function NFTCard({
         </button>
       </div>
       <div className='flex items-center space-x-4'>
-        <Image
-          src={pfp}
-          alt='Profile Picture'
-          width={50}
-          height={50}
-          className='rounded-full'
-        />
+        <div className='relative w-12 h-12'>
+          <Image
+            src={authorProfilePicture}
+            alt='Profile Picture'
+            layout='fill'
+            className='rounded-full'
+            objectFit='cover'
+          />
+        </div>
 
         <div className='flex flex-col'>
           <p className='font-bold'>{title}</p>
-          <p className='text-xs text-gray-500'>@{username}</p>
+          <p className='text-xs text-gray-500'>@{author}</p>
         </div>
       </div>
       <div className='flex items-center justify-between px-4 py-4 bg-white rounded-lg dark:bg-black'>
@@ -121,7 +123,7 @@ export default function NFTCard({
       <Account
         description='Designer and Developer'
         username='cristicretu'
-        pfp='/static/images/Pfp.png'
+        profilePicture='/static/images/Pfp.png'
       />
     ),
     editLink:
@@ -131,20 +133,20 @@ import React from 'react';
 
 interface AccountProps {
   username: string;
-  pfp: string;
+  profilePicture: string;
   description: string;
 }
 export default function Account({
   username,
-  pfp,
+  profilePicture,
   description
 }: AccountProps): JSX.Element {
   return (
     <div className='flex items-center px-3 py-6 space-x-4 bg-gray-200 rounded-lg dark:bg-gray-900'>
-      {pfp && (
+      {profilePicture && (
         <div className='relative w-12 h-12'>
           <Image
-            src={pfp}
+            src={profilePicture}
             alt='Profile Picture'
             layout='fill'
             className='rounded-full'

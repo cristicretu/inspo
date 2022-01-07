@@ -3,20 +3,20 @@ import React from 'react';
 
 interface AccountProps {
   username: string;
-  pfp: string;
+  profilePicture: string;
   description: string;
 }
 export default function Account({
   username,
-  pfp,
+  profilePicture,
   description
 }: AccountProps): JSX.Element {
   return (
     <div className='flex items-center px-3 py-6 space-x-4 bg-gray-200 rounded-lg dark:bg-gray-900'>
-      {pfp && (
+      {profilePicture && (
         <div className='relative w-12 h-12'>
           <Image
-            src={pfp}
+            src={profilePicture}
             alt='Profile Picture'
             layout='fill'
             className='rounded-full'

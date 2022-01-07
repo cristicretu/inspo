@@ -2,6 +2,7 @@ import * as ContextMenuPrimitive from '@radix-ui/react-context-menu';
 
 import React, { Children, ReactNode, useState } from 'react';
 import { SiGithub, SiTailwindcss } from 'react-icons/si';
+import useKeypress from 'react-use-keypress';
 
 import {
   HiOutlineCode,
@@ -28,20 +29,20 @@ const generalMenuItems: RadixMenuItem[] = [
   {
     label: 'Copy Tailwind Code',
     icon: <SiTailwindcss className='w-3.5 h-3.5 mr-2' />,
-    shortcut: '⌘+C'
-  },
-  {
-    label: 'Copy Unstyled Code',
-    icon: <HiOutlineCode className='w-3.5 h-3.5 mr-2' />,
-    shortcut: '⌘+U'
+    shortcut: 'C'
   }
+  // {
+  //   label: 'Copy Unstyled Code',
+  //   icon: <HiOutlineCode className='w-3.5 h-3.5 mr-2' />,
+  //   shortcut: '⌘+U'
+  // }
 ];
 
 const githubMenuItems: RadixMenuItem[] = [
   {
     label: 'GitHub',
     icon: <SiGithub className='w-3.5 h-3.5 mr-2' />,
-    shortcut: '⌘+G'
+    shortcut: 'G'
   }
 ];
 
@@ -52,13 +53,32 @@ export default function Card({
   children,
   props
 }: ICardProps): JSX.Element {
+  const [isContextMenuOpen, setIsContextMenuOpen] = useState(false);
+
   const saveCode = (code: string) => {
     navigator.clipboard.writeText(code);
   };
 
+  const visitGithub = () => {
+    window.open(editLink, '_blank');
+  };
+
+  useKeypress('c', () => {
+    if (isContextMenuOpen) {
+      saveCode(tailwindCode);
+    }
+  });
+
+  useKeypress('g', () => {
+    if (isContextMenuOpen) {
+      visitGithub();
+    }
+  });
+
   return (
     <div>
-      <ContextMenuPrimitive.Root>
+      <ContextMenuPrimitive.Root
+        onOpenChange={() => setIsContextMenuOpen(true)}>
         <ContextMenuPrimitive.Trigger className='crosshair'>
           {children}
         </ContextMenuPrimitive.Trigger>
@@ -90,6 +110,7 @@ export default function Card({
           {githubMenuItems.map(({ label, icon, shortcut }, i) => (
             <ContextMenuPrimitive.Item
               key={`${label}-${i}`}
+              onSelect={visitGithub}
               className={cx(
                 'flex items-center px-2 py-2 text-xs rounded-md outline-none cursor-default select-none',
                 'text-gray-400 focus:bg-gray-50 dark:text-gray-500 dark:focus:bg-gray-900'

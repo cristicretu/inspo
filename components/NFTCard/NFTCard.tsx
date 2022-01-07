@@ -3,18 +3,18 @@ import React from 'react';
 
 interface NFTCardProps {
   title: string;
-  username?: string;
+  author?: string;
   image?: string;
-  pfp?: string;
+  authorProfilePicture?: string;
   timeLeft?: string;
   price?: number;
 }
 
 export default function NFTCard({
   title,
-  username,
+  author,
   image,
-  pfp,
+  authorProfilePicture,
   timeLeft,
   price
 }: NFTCardProps): JSX.Element {
@@ -54,7 +54,7 @@ export default function NFTCard({
       <div className='flex items-center space-x-4'>
         <div className='relative w-12 h-12'>
           <Image
-            src={pfp}
+            src={authorProfilePicture}
             alt='Profile Picture'
             layout='fill'
             className='rounded-full'
@@ -64,7 +64,7 @@ export default function NFTCard({
 
         <div className='flex flex-col'>
           <p className='font-bold'>{title}</p>
-          <p className='text-xs text-gray-500'>@{username}</p>
+          <p className='text-xs text-gray-500'>@{author}</p>
         </div>
       </div>
       <div className='flex items-center justify-between px-4 py-4 bg-white rounded-lg dark:bg-black'>
