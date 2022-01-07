@@ -6,6 +6,7 @@ interface IComponent {
   editLink?: string;
   tailwindCode?: string;
   unstyledCode?: string;
+  props?: Record<string, unknown>;
 }
 
 const components: IComponent[] = [

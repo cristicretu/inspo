@@ -13,7 +13,8 @@ export default function Home() {
               key={index}
               tailwindCode={component.tailwindCode}
               unstyledCode={component.unstyledCode}
-              editLink={component.editLink}>
+              editLink={component.editLink}
+              props={component.JSX.props}>
               {component.JSX}
             </Card>
           ))}

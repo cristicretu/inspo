@@ -21,7 +21,7 @@ export default function NFTCard({
   return (
     <div className='flex flex-col p-6 space-y-6 bg-gray-200 dark:bg-gray-900 rounded-xl'>
       <div className='relative group'>
-        <div className='h-96'>
+        <div className='relative h-96'>
           <Image
             src={image}
             alt='NFT'
