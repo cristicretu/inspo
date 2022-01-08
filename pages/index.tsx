@@ -1,6 +1,7 @@
 import Card from '@components/Card';
 import Container from '@components/Container';
 import HelpCard from '@components/HelpCard';
+import TwitterCard from '@components/TwitterCard';
 import components from '@data/Components';
 
 export default function Home() {
@@ -29,6 +30,16 @@ export default function Home() {
                   {component.JSX}
                 </Card>
               ))}
+              <TwitterCard
+                likeCount={10}
+                name='Rauno Freiberg'
+                profilePicture='/static/images/Pfp.png'
+                replyCount={10}
+                retweetCount={10}
+                tweet='da'
+                tweetDate='Jan 7'
+                username='raunofreiberg'
+              />
             </div>
           )}
           {secondChild && (

@@ -1,16 +1,16 @@
 import * as ContextMenuPrimitive from '@radix-ui/react-context-menu';
 
+import {
+  HiArrowNarrowRight,
+  HiDotsHorizontal,
+  HiOutlineCode
+} from 'react-icons/hi';
 import React, { Children, ReactNode, useState } from 'react';
 import { SiGithub, SiTailwindcss } from 'react-icons/si';
-import useKeypress from 'react-use-keypress';
 
-import {
-  HiOutlineCode,
-  HiDotsHorizontal,
-  HiArrowNarrowRight
-} from 'react-icons/hi';
-import cx from 'classnames';
 import { createToast } from 'vercel-toast';
+import cx from 'classnames';
+import useKeypress from 'react-use-keypress';
 
 interface ICardProps {
   editLink: string;
@@ -159,7 +159,7 @@ export default function Card({
             <ContextMenuPrimitive.Content
               className={cx(
                 'radix-side-right:animate-scale-in origin-radix-dropdown-menu',
-                'px-1 py-1 w-full text-xs rounded-md shadow-md',
+                'px-1 py-1 ml-1 w-full text-xs rounded-md shadow-md',
                 'bg-white dark:bg-gray-800'
               )}>
               {props &&
