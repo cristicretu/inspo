@@ -1,6 +1,6 @@
 import Card from '@components/Card';
 import Container from '@components/Container';
-
+import HelpCard from '@components/HelpCard';
 import components from '@data/Components';
 
 export default function Home() {

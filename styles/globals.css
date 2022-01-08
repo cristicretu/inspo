@@ -13,6 +13,32 @@
   font-style: normal;
 }
 
+.myblur {
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+}
+
+.gradienta {
+  background: linear-gradient(
+      114.95deg,
+      rgba(235, 0, 255, 0.5) 0%,
+      rgba(0, 71, 255, 0) 34.35%
+    ),
+    linear-gradient(180deg, #004b5b 0%, #ffa7a7 100%),
+    linear-gradient(244.35deg, #ffb26a 0%, #3676b1 50.58%, #00a3ff 100%),
+    linear-gradient(244.35deg, #ffffff 0%, #004a74 49.48%, #ff0000 100%),
+    radial-gradient(100% 233.99% at 0% 100%, #b70000 0%, #ad00ff 100%),
+    linear-gradient(307.27deg, #219d87 0.37%, #2650ba 50.19%, #2800c6 100%),
+    radial-gradient(
+      100% 140% at 100% 0%,
+      #ff00c7 0%,
+      #006c7a 49.48%,
+      #760000 100%
+    );
+  background-blend-mode: hard-light, overlay, overlay, overlay, difference,
+    difference, normal;
+}
+
 .crosshair {
   cursor: crosshair;
 }
