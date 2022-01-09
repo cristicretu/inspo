@@ -105,7 +105,9 @@ export default function Container(props) {
           </svg>
         </a>
       </nav>
-      <main id='skip' className='flex flex-col justify-center px-2'>
+      <main
+        id='skip'
+        className='flex flex-col justify-center px-2 mx-auto max-w-[144rem] '>
         <div className='mb-4 text-gray-800 dark:text-gray-200'>{children}</div>
         <Footer />
       </main>

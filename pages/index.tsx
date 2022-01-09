@@ -31,12 +31,12 @@ export default function Home() {
                 </Card>
               ))}
               <TwitterCard
-                likeCount={10}
+                likeCount={1.4}
                 name='Rauno Freiberg'
                 profilePicture='/static/images/Pfp.png'
-                replyCount={10}
-                retweetCount={10}
-                tweet='da'
+                replyCount={2.3}
+                retweetCount={1.0}
+                tweet='Assuming language based on location is the worst developer choice ever.'
                 tweetDate='Jan 7'
                 username='raunofreiberg'
               />
